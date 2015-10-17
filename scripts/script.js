@@ -23,21 +23,29 @@ $("nav li[data-tab='" + window.location.pathname.split('/')[1] +"']").addClass('
 $('nav li[data-tab="customers"]').on('click', function() {
 	
 
-
-	$.ajax({
-        url: '/customersjson',
-        method: 'GET',
-        success: function(data){
-            console.log('[INFO]Retrieving clients');
-            console.log(data);
-            
-        },
-        fail: function(err){
-            console.log('[ERROR]Cannot retrieve clients');
-            
-        }
-    });
+    
+	
 });
+
+$(document).ready(function() {
+    $('.clients').DataTable( {
+        "ajax": "/api/customers",
+        "columns": [
+            { "data": "firstname" },
+            { "data": "surname" },
+            { "data": "datebirth" },
+            { "data": "age"},
+            { "data": "address"},
+            { "data": "skype"},
+            { "data": "email"},
+            { "data": "phone"},
+            { "data": "work"}
+        ]
+    } );
+} );
+
+
+
 
 
 

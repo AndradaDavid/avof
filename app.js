@@ -239,6 +239,22 @@ var startApplication1 = function () {
 	app.set('view engine', 'jade');
 	app.use(express.static(path.join(__dirname, '')));
 
+	app.get('/', function(req, res) {
+		res.redirect('/overview');
+	});
+
+	app.get('/overview', function(req, res) {
+		res.render("overview");
+	});
+
+	app.get('/orders', function(req, res) {
+		res.render("orders");
+	});
+
+	app.get('/mails', function(req, res) {
+		res.render("mails");
+	});
+
 	app.get('/customers', function(req, res) {
 		res.render("customers");
 	});
@@ -249,7 +265,8 @@ var startApplication1 = function () {
 		MongoClient.connect(dbUrl, function(err, db){
 			console.log("We are connected");	
 			findClients(db, function(res1) {				
-				res.send(JSON.stringify(res1));
+				clients = {'data': res1}
+				res.send(JSON.stringify(clients));
 			});
 
 		});
