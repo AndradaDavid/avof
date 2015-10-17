@@ -1,0 +1,21 @@
+{
+  "name": "avof-app",
+  "version": "1.0.0",
+  "description": "An application for orders manipulation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "avon",
+    "oriflame",
+    "order",
+    "npm"
+  ],
+  "author": "Andrada David",
+  "license": "ISC",
+  "dependencies": {
+    "jade": "^1.11.0"
+  }
+}

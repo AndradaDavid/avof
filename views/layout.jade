@@ -1,0 +1,28 @@
+
+doctype html
+html
+	head
+		include head
+
+	body
+		div.page
+			include header
+
+			div.pageContent
+				block content
+
+			//div.pageContent
+			//	case pageContent
+			//		when 'orders'
+			//			include orders
+			//		when 'customers'
+			//			include customers
+			//		when 'mails'
+			//			include mails
+			//		when 'statistics'
+			//			include statistics
+			//		default
+			//			include overview
+			//
+			
+			include footer

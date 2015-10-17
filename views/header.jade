@@ -1,0 +1,15 @@
+header 
+	nav
+		div.icon
+		ul
+			each val, index in ["overview", "orders", "customers", "mails", "statistics"]
+				if index == 0 
+					li(data-tab=val)= val				
+				else
+					li(data-tab=val)= val
+
+					
+				
+
+
+			
