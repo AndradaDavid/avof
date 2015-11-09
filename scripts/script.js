@@ -30,16 +30,17 @@ $('nav li[data-tab="customers"]').on('click', function() {
 $(document).ready(function() {
     $('.clients').DataTable( {
         "ajax": "/api/customers",
+        "info": false,
+        "ordering": true,
+        "info":     false,
+        "bLengthChange": false,
         "columns": [
-            { "data": "firstname" },
-            { "data": "surname" },
-            { "data": "datebirth" },
-            { "data": "age"},
-            { "data": "address"},
-            { "data": "skype"},
-            { "data": "email"},
-            { "data": "phone"},
-            { "data": "work"}
+            { "data": "firstname", title: "Firstname" },
+            { "data": "surname", title: "Surname" },
+            { "data": "skype", title: "Skype"},
+            { "data": "email", title: "E-mail"},
+            { "data": "phone", title: "Telephone"}
+          
         ]
     } );
 } );

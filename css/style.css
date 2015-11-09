@@ -32,6 +32,14 @@ body {
 	margin-right: auto;
 }
 
+table.dataTable {
+	padding-top: 30px;
+}
+
+table.dataTable thead tr {
+	text-align: left;
+}
+
 table.dataTable tbody tr {
 	background: transparent;
 }

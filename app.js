@@ -261,11 +261,12 @@ var startApplication1 = function () {
 
 
 	app.get('/api/customers', function(req,res){
+		var data = [];
 		res.setHeader('Content-Type', 'application/json');
 		MongoClient.connect(dbUrl, function(err, db){
 			console.log("We are connected");	
-			findClients(db, function(res1) {				
-				clients = {'data': res1}
+			findClients(db, function(result) {		
+				clients = {'data': result};
 				res.send(JSON.stringify(clients));
 			});
 
