@@ -19,21 +19,20 @@ $('nav li').on('click', function() {
 $("nav li[data-tab='" + window.location.pathname.split('/')[1] +"']").addClass('active');
 
 
-//calling the customers from db
-$('nav li[data-tab="customers"]').on('click', function() {
-	
-
+//events on clients table 
+$(document).ready(function() {
     
-	
 });
 
+//populate the table with all customers from db
 $(document).ready(function() {
-    $('.clients').DataTable( {
+    var clientTable = $('.clients').DataTable( {
         "ajax": "/api/customers",
         "info": false,
         "ordering": true,
         "info":     false,
         "bLengthChange": false,
+        "bProcessing": true,
         "columns": [
             { "data": "firstname", title: "Firstname" },
             { "data": "surname", title: "Surname" },
@@ -43,6 +42,17 @@ $(document).ready(function() {
           
         ]
     } );
+
+    $('table.clients').on('click', 'tr',function(event) {
+        debugger;
+        var data = clientTable.row(this).data();
+        debugger;
+        alert( 'You clicked on '+data+'\'s row' );
+
+
+        
+        
+    });
 } );
 
 
