@@ -19,11 +19,6 @@ $('nav li').on('click', function() {
 $("nav li[data-tab='" + window.location.pathname.split('/')[1] +"']").addClass('active');
 
 
-//events on clients table 
-$(document).ready(function() {
-    
-});
-
 //populate the table with all customers from db
 $(document).ready(function() {
     var clientTable = $('.clients').DataTable( {
@@ -44,14 +39,10 @@ $(document).ready(function() {
     } );
 
     $('table.clients').on('click', 'tr',function(event) {
-        debugger;
-        var data = clientTable.row(this).data();
-        debugger;
-        alert( 'You clicked on '+data+'\'s row' );
+        var data = clientTable.row(this).data();  
+        $('.edit-clients-wrapper').show();
 
 
-        
-        
     });
 } );
 
