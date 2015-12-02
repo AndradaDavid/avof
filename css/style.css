@@ -71,12 +71,11 @@ table.dataTable tbody tr.even {
 
 
 /*** Clients edit wrapper***/
-.edit-clients-wrapper {
+div.edit-clients-wrapper {
 	display: none;
     width: 100%;
     height: 100%;
-    background-color: white;
-    opacity: .6;
+    background-color: rgba(0,0,0,0.3);
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -85,13 +84,39 @@ table.dataTable tbody tr.even {
 
 }
 
-.edit-clients-form {
 
-    background-color: lightgrey;
+div.edit-clients-wrapper div.edit-clients-form {
+
+    background-color: #ffffff;
     z-index: 1000;
     width: 600px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
     transform: translate(0, 48%);
+}
+
+div.edit-clients-form div.edit-wrapper {
+    width: 524px;
+    margin: 16px;
+    float: left;
+    height: 90%;
+}
+
+div.edit-clients-form div.edit-wrapper h2 {
+	font-size: 14px;
+}
+
+div.close-button {
+    width: 16px;
+    height: 16px;
+    right: 16px;
+    top: 16px;
+    position: relative;
+    background-color: #000;
+    float: right;
+}
+
+div.close-button:hover {
+	cursor: pointer;
 }

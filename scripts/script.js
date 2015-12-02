@@ -41,8 +41,10 @@ $(document).ready(function() {
     $('table.clients').on('click', 'tr',function(event) {
         var data = clientTable.row(this).data();  
         $('.edit-clients-wrapper').show();
+    });
 
-
+    $('.close-button').on('click', function () {
+        $('.edit-clients-wrapper').hide();
     });
 } );
 
