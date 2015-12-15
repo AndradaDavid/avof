@@ -80,10 +80,7 @@ div.edit-clients-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-
-
 }
-
 
 div.edit-clients-wrapper div.edit-clients-form {
 
@@ -119,4 +116,21 @@ div.close-button {
 
 div.close-button:hover {
 	cursor: pointer;
+}
+
+/*** Clients edit lightbox ***/
+.wide {
+	width: 100%;
+}
+
+.form-elem {
+	margin-top: 10px;
+}
+
+label {
+	width: 80px;
+	display: inline-block;
+	margin-right: 8px;
+	text-align: right;
+
 }

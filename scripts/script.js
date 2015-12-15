@@ -41,11 +41,44 @@ $(document).ready(function() {
     $('table.clients').on('click', 'tr',function(event) {
         var data = clientTable.row(this).data();  
         $('.edit-clients-wrapper').show();
+
+        //bind model from api with knockout
+        function clientModelKO () {
+            var self = this;
+            this.firstname = ko.observable(data.firstname);
+            this.surname = ko.observable(data.surname);
+            this.dateofbirth = ko.observable(data.databirth);
+            this.age = ko.observable(data.age);
+            this.address = ko.observable(data.address);
+            this.skype = ko.observable(data.skype);
+            this.email = ko.observable(data.email);
+            this.phone = ko.observable(data.phone);
+            this.work = ko.observable(data.work);
+
+            this.setFirstname = function() {
+                self.firstname(data.firstname);
+            };
+
+        }
+
+        var vm = new clientModelKO();
+        vm.setFirstname('hei');
+        ko.applyBindings(vm);
     });
 
     $('.close-button').on('click', function () {
         $('.edit-clients-wrapper').hide();
     });
+
+    ////bind data with knockout
+    //window.onload= function() {
+    //    var viewModel = {
+    //        myMessage: ko.observable() // Initially blank
+    //    };
+    //    viewModel.myMessage("Hello, world!");
+    //    ko.applyBindings(viewModel);
+    //};
+
 } );
 
 

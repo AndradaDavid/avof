@@ -8,7 +8,37 @@ block content
 		div.edit-clients-form 
 			div.edit-wrapper
 				h2 Customer information
-				label Name
-					input 
+
+				form
+					div.wide.form-elem
+						label(for='firstname') Firstname
+						input.firstname(name='firstname', data-bind='with:setFirstname')
+					div.wide.form-elem
+						label(for='surname') Surname
+						input(name='surname', data-bind='value:surname')
+					div.wide.form-elem
+						label(for='dateofbirth') Date of birth
+						input(name='dateofbirth', data-bind='value:dateofbirth')
+					div.wide.form-elem
+						label(for='age') Age
+						input(name='age', data-bind='value:age')
+					div.wide.form-elem
+						label(for='address') Address
+						input(name='address', data-bind='value:address')
+					div.wide.form-elem
+						label(for='skype') Skype
+						input(name='skype', data-bind='value:skype')
+					div.wide.form-elem
+						label(for='e-mail') e-mail
+						input(name='e-mail', data-bind='value:email')
+					div.wide.form-elem
+						label(for='phone') Phone
+						input(name='phone', data-bind='value:phone')
+					div.wide.form-elem
+						label(for='work') Work
+						input(name='work', data-bind='value:work')
+
+					div.wide.form-elem
+						input.edit(type='submit',value='Edit')
 			div.close-button
 
