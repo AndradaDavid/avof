@@ -39,11 +39,12 @@ $(document).ready(function() {
     } );
 
     $('table.clients').on('click', 'tr',function(event) {
-        var data = clientTable.row(this).data();  
+        var data = clientTable.row(this).data();
+        $('.edit-wrapper input').val('');
         $('.edit-clients-wrapper').show();
 
         //bind model from api with knockout
-        function clientModelKO () {
+        function clientModelKOBios () {
             var self = this;
             this.firstname = ko.observable(data.firstname);
             this.surname = ko.observable(data.surname);
@@ -54,16 +55,39 @@ $(document).ready(function() {
             this.email = ko.observable(data.email);
             this.phone = ko.observable(data.phone);
             this.work = ko.observable(data.work);
-
-            this.setFirstname = function() {
-                self.firstname(data.firstname);
-            };
+        }
+        /*function clientModelKOBios () {
+            var self = this;
+            this.firstname = ko.observable();
+            this.surname = ko.observable();
+            this.dateofbirth = ko.observable();
+            this.age = ko.observable();
+            this.address = ko.observable();
+            this.skype = ko.observable();
+            this.email = ko.observable();
+            this.phone = ko.observable();
+            this.work = ko.observable();
+        }
+*/
+        var viewModel = {
+            bios: ko.observable(new clientModelKOBios()),
+            cpu: ko.observable()
 
         }
 
-        var vm = new clientModelKO();
-        vm.setFirstname('hei');
-        ko.applyBindings(vm);
+
+        //var viewModel = ko.toJSON(data);
+        //ko.toJSON(viewModel);
+
+        ko.cleanNode($('.edit-wrapper input')[0]);
+        //var vm = new clientModelKO();
+        //vm.setFirstname('hei');
+        //ko.applyBindings(vm);
+
+        ko.applyBindings(viewModel.bios(), $('.edit-wrapper')[0]);
+
+
+
     });
 
     $('.close-button').on('click', function () {
